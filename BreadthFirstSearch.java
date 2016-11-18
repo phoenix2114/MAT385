@@ -64,8 +64,11 @@ class Graph
     // Driver method to
     public static void main(String args[])
     {
-        Graph g = new Graph(4);
- 
+     
+     //Number of vertices, user input
+     Graph g = new Graph(4);
+     
+        //TODO:Randomly add edges together
         g.addEdge(0, 1);
         g.addEdge(0, 2);
         g.addEdge(1, 2);
@@ -73,10 +76,14 @@ class Graph
         g.addEdge(2, 3);
         g.addEdge(3, 3);
  
+        //TODO: Print out graph to new window
+        //ask for starting starting node
+     
         System.out.println("Following is Breadth First Traversal "+
                            "(starting from vertex 2)");
  
-        g.BFS(2);
+     //traverse using starting node
+     g.BFS(2);
     }
 }
 //
