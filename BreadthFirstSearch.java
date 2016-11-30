@@ -64,26 +64,24 @@ class Graph
     // Driver method to
     public static void main(String args[])
     {
+     //gets numbers of nodes for graph
+      int v = System.out.println("How many nodes do you want your graph to have?"); 
      
      //Number of vertices, user input
-     Graph g = new Graph(4);
+     Graph g = new Graph(v);
      
         //TODO:Randomly add edges together
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 2);
-        g.addEdge(2, 0);
-        g.addEdge(2, 3);
-        g.addEdge(3, 3);
- 
+        //g.addEdge(0, 1);
+        
         //TODO: Print out graph to new window
-        //ask for starting starting node
      
-        System.out.println("Following is Breadth First Traversal "+
-                           "(starting from vertex 2)");
+        //ask for starting starting node
+       int startNode = System.out.println("Which node do you want to start? ") ;    
+       
+       System.out.println("Following is Breadth First Traversal " + "(starting from " + startNode + ")");
  
      //traverse using starting node
-     g.BFS(2);
+     g.BFS(startNode);
     }
 }
 //
