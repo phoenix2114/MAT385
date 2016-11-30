@@ -69,12 +69,17 @@ class Graph
      
      //Number of vertices, user input
      Graph g = new Graph(v);
-     
-        //TODO:Randomly add edges together
-        //g.addEdge(0, 1);
-        
+
+     Random random = new Random();
+
+     //TODO:Randomly add edges together
+        while (i= 0 != v){
+        g.addEdge(Math.abs(random.nextInt(v + 1 - 1) + 1), Math.abs(random.nextInt(v + 1 - 1) + 1);
+        }
+
         //TODO: Print out graph to new window
-     
+        System.out.println(g);
+
         //ask for starting starting node
        int startNode = System.out.println("Which node do you want to start? ") ;    
        
