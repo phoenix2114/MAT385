@@ -77,13 +77,13 @@ class Graph
         g.addEdge(Math.abs(random.nextInt(v + 1 - 1) + 1), Math.abs(random.nextInt(v + 1 - 1) + 1);
         }
 
-        //TODO: Print out graph to new window
-        System.out.println(g);
+     //TODO: Print out graph to new window
+     System.out.println(g);
 
-        //ask for starting starting node
-       int startNode = System.out.println("Which node do you want to start? ") ;    
+     //ask for starting starting node
+     int startNode = System.out.println("Which node do you want to start? ") ;    
        
-       System.out.println("Following is Breadth First Traversal " + "(starting from " + startNode + ")");
+     System.out.println("Following is Breadth First Traversal " + "(starting from " + startNode + ")");
  
      //traverse using starting node
      g.BFS(startNode);
