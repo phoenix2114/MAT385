@@ -1,15 +1,14 @@
-// Java program to print BFS traversal from a given source vertex.
-// BFS(int s) traverses vertices reachable from s.
 import java.io.*;
 import java.util.*;
- 
+import javafx.*;
+
 // This class represents a directed graph using adjacency list
 // representation
 class Graph
 {
     private int V;   // No. of vertices
     private LinkedList<Integer> adj[]; //Adjacency Lists
- 
+
     // Constructor
     Graph(int v)
     {
@@ -18,33 +17,33 @@ class Graph
         for (int i=0; i<v; ++i)
             adj[i] = new LinkedList();
     }
- 
+
     // Function to add an edge into the graph
     void addEdge(int v,int w)
     {
         adj[v].add(w);
     }
- 
+
     // prints BFS traversal from a given source s
     void BFS(int s)
     {
         // Mark all the vertices as not visited(By default
         // set as false)
         boolean visited[] = new boolean[V];
- 
+
         // Create a queue for BFS
         LinkedList<Integer> queue = new LinkedList<Integer>();
- 
+
         // Mark the current node as visited and enqueue it
         visited[s]=true;
         queue.add(s);
- 
+
         while (queue.size() != 0)
         {
             // Dequeue a vertex from queue and print it
             s = queue.poll();
             System.out.print(s+" ");
- 
+
             // Get all adjacent vertices of the dequeued vertex s
             // If a adjacent has not been visited, then mark it
             // visited and enqueue it
@@ -60,33 +59,37 @@ class Graph
             }
         }
     }
- 
+
     // Driver method to
     public static void main(String args[])
     {
-     //gets numbers of nodes for graph
-      int v = System.out.println("How many nodes do you want your graph to have?"); 
-     
-     //Number of vertices, user input
-     Graph g = new Graph(v);
+        Scanner nodes = new Scanner(System.in);
+        Scanner start = new Scanner(System.in);
 
-     Random random = new Random();
+        //gets numbers of nodes for graph
+        System.out.println("How many nodes do you want your graph to have?");
 
-     //TODO:Randomly add edges together
-        while (i= 0 != v){
-        g.addEdge(Math.abs(random.nextInt(v + 1 - 1) + 1), Math.abs(random.nextInt(v + 1 - 1) + 1);
-        }
+        //Number of vertices, user input
+        int v = nodes.nextInt();
 
-     //TODO: Print out graph to new window
-     System.out.println(g);
+        System.out.println("Which node do you want to start? ") ;
+        int startNode = start.nextInt();
 
-     //ask for starting starting node
-     int startNode = System.out.println("Which node do you want to start? ") ;    
-       
-     System.out.println("Following is Breadth First Traversal " + "(starting from " + startNode + ")");
- 
-     //traverse using starting node
-     g.BFS(startNode);
+        System.out.println("Following is Breadth First Traversal starting from " + startNode);
+
+        //creates graph based on nodes indicated by user
+        Graph g = new Graph(v);
+
+        //TODO:Randomly add edges together
+        g.addEdge(0,1);
+        g.addEdge(1,2);
+        g.addEdge(2,3);
+        g.addEdge(3,0);
+
+        //TODO: Print out graph to new window
+        //System.out.println(g);
+
+        //traverse using starting node
+        g.BFS(startNode);
     }
 }
-//
