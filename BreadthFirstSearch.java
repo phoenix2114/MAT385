@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import javafx.*;
 
 // This class represents a directed graph using adjacency list
 // representation
@@ -80,12 +79,10 @@ class Graph
         //creates graph based on nodes indicated by user
         Graph g = new Graph(v);
 
-        //TODO:Randomly add edges together
-        g.addEdge(0,1);
-        g.addEdge(1,2);
-        g.addEdge(2,3);
-        g.addEdge(3,0);
-
+        for(int i = 0; i<v; i++){
+            //TODO:Randomly add edges together
+            g.addEdge(i, i+1);
+        }
         //TODO: Print out graph to new window
         //System.out.println(g);
 
