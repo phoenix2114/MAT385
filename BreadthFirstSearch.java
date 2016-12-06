@@ -79,7 +79,7 @@ class Graph
         //creates graph based on nodes indicated by user
         Graph g = new Graph(v);
 
-        for(int i = 0; i<v; i++){
+        for(int i = 0; i<v-1; i++){
             //TODO:Randomly add edges together
             g.addEdge(i, i+1);
         }
