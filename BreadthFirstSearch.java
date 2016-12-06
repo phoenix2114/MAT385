@@ -85,16 +85,14 @@ class Graph
             g.addEdge(i, i+1);
         }
 
-        //Print out graph
+        //traverse using starting node
+        g.BFS(startNode);
+        
+           //Print out graph
         System.out.println("Your graph and edges: ");
         for (int j =0; j < v-1; j++){
             System.out.println(g.adj[j] + " -> " + g.adj[j+1]);
 
         }
-
-
-        //traverse using starting node
-        g.BFS(startNode);
     }
 }
-//
