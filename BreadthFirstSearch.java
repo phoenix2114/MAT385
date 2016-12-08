@@ -80,9 +80,24 @@ class Graph
         //creates graph based on nodes indicated by user
         Graph g = new Graph(v);
 
+        //Random node to attach to
+        Random rand = new Random();
+        int random;
+        //number of connections
+        Random rand2 = new Random();
+        int random2;
         //Randomly add edges together
         for(int i = 0; i<v-1; i++){
-            g.addEdge(i, i+1);
+        	random2 = rand2.nextInt(v-1)+1;
+        	random = rand.nextInt(v);
+        	//generate random number of connections from one node to another
+        	for (int k = 0; k < random2; k++){
+        		while(random == i){
+        			random = rand.nextInt(v);
+        		}
+        		g.addEdge(i, random);
+        		random = rand.nextInt(v);
+        	}
         }
 
         //traverse using starting node
@@ -90,9 +105,8 @@ class Graph
         
            //Print out graph
         System.out.println("Your graph and edges: ");
-        for (int j =0; j < v-1; j++){
-            System.out.println(g.adj[j] + " -> " + g.adj[j+1]);
-
+        for (int j =0; j < v ; j++){
+            System.out.println("[" + j + "]" + " -> " + g.adj[j]);
         }
     }
 }
