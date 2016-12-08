@@ -87,7 +87,7 @@ class Graph
         Random rand2 = new Random();
         int random2;
         //Randomly add edges together
-        for(int i = 0; i<v-1; i++){
+        for(int i = 0; i<v; i++){
         	random2 = rand2.nextInt(v-1)+1;
         	random = rand.nextInt(v);
         	//generate random number of connections from one node to another
