@@ -83,19 +83,23 @@ class Graph
         //Random node to attach to
         Random rand = new Random();
         int random;
-        //number of connections
+        //Number of connections
         Random rand2 = new Random();
         int random2;
         //Randomly add edges together
         for(int i = 0; i<v; i++){
+            //generate between 1 and v-1 connections (if 5 nodes, generate 1-4 connections)
         	random2 = rand2.nextInt(v-1)+1;
         	random = rand.nextInt(v);
         	//generate random number of connections from one node to another
         	for (int k = 0; k < random2; k++){
+                //don't connect node to itself
         		while(random == i){
         			random = rand.nextInt(v);
         		}
+                //connect to the random node
         		g.addEdge(i, random);
+                //generate new node
         		random = rand.nextInt(v);
         	}
         }
