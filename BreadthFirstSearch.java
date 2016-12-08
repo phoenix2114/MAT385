@@ -21,7 +21,11 @@ class Graph
     // Function to add an edge into the graph
     void addEdge(int v,int w)
     {
-        adj[v].add(w);
+    	//Check if node is already connected to w
+    	if (adj[v].contains(w));
+    	//If not, connect it
+    	else
+    		adj[v].add(w);
     }
 
     // prints BFS traversal from a given source s
@@ -67,12 +71,12 @@ class Graph
         Scanner start = new Scanner(System.in);
 
         //gets numbers of nodes for graph
-        System.out.println("How many nodes do you want your graph to have?");
+        System.out.print("How many nodes do you want your graph to have? ");
 
         //Number of vertices, user input
         int v = nodes.nextInt();
 
-        System.out.println("Which node do you want to start? ") ;
+        System.out.print("Which node do you want to start? ") ;
         int startNode = start.nextInt();
 
         System.out.println("Following is Breadth First Traversal starting from " + startNode);
@@ -107,10 +111,12 @@ class Graph
         //traverse using starting node
         g.BFS(startNode);
         
-           //Print out graph
-        System.out.println("Your graph and edges: ");
+        //Print out graph
+        System.out.println("\nYour graph and edges: ");
         for (int j =0; j < v ; j++){
             System.out.println("[" + j + "]" + " -> " + g.adj[j]);
         }
+        nodes.close();
+        start.close();
     }
 }
